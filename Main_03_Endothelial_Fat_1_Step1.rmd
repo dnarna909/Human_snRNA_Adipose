@@ -1,0 +1,73 @@
+---
+title: "Main_03_Endothelial_Fat_1.for annotation"
+author: "Jia Nie"
+date: "1/13/2022"
+output: html_document
+---
+
+### DISCLAIMER ---------------------------------------------------------------------------------------------------------------------
+Some of the algorithms are non-deterministic making the results slightly different from run to run.
+Many of the algorithms are frequently updated with new releases making the results slightly different from version to version.
+Depending on your system, this code below may not produce an exact 1:1 copy of the results. 
+This adversely affects clustering, filtering etc. if the code is naively copy-pasted.
+For better reproducibility, please download quality-filtered Rds objects and work on downstream analyses. 
+
+change "D:/" to "/media/jianie/Extreme SSD1/" # if in LUNIX computer
+
+# Load libraries -------------------------------------------------------------------------------------------------------------
+```{r clear background, eval=TRUE, include=FALSE}
+# rm(list = ls(all.names = TRUE)) #will clear all objects includes hidden objects.
+gc() #free up memrory and report the memory usage.
+memory.limit(size = 1e+13)
+```
+
+```{r, include=FALSE}
+source(paste0(Disk, Project.folder, "/", "Project Parameters.R"), local = knitr::knit_global())
+source(paste0(Disk, "00_Functions_Refs/Functions_Human Fat snRNA.R"), local = knitr::knit_global())
+# or sys.source("your-script.R", envir = knitr::knit_global())
+``` 
+
+```{r install packages, eval=TRUE, include=FALSE}
+# library("velocyto.R") # linux -specific
+```
+
+
+# Import data and subset ----------------------------------------------------------------------------------------------------------
+```{r}
+eWAT <- readRDS(paste0(Disk, Project.folder, "/", Rds.folder, "/", seurat.file))
+file.name <- stringr::str_split(seurat.file, ".Rds")[[1]][1]
+Annotation.meta.data <- readRDS(paste0(Disk, Project.folder, "/", Rds.folder, "/", file.name, "_Annotation.metadata.Rds"))  
+eWAT <- AddMetaData( object = eWAT, metadata = Annotation.meta.data)
+gc() #free up memrory and report the memory usage.
+
+Amb <- readRDS(paste0(Disk, Project.folder, "/", Rds.folder, "/","Ambient.Rds"))
+gc() #free up memrory and report the memory usage.
+seurat.data <- subset(eWAT, subset = Annotation %in% c("Endothelial"))
+rm(eWAT)
+gc() #free up memrory and report the memory usage.
+
+celltype.name <- stringr::str_split(celltype.file, ".Rds")[[1]][1]
+# Embedding and clustering of mesothelial and endothelial cells into subpopulations --------------------------------------------
+# NOTH: THIS STEP IS NON-DETERMINISTIC (Harmony) - RESULTS VARY FROM RUN TO RUN. 
+# Thus, in order to reproduce downstream analyses using the same Harmony results, please download eWAT_Endothelial.Rds
+seurat.data <- FindVariableFeatures(seurat.data, nfeatures=3000)
+VariableFeatures(seurat.data) <- VariableFeatures(seurat.data)[!(VariableFeatures(seurat.data) %in% Amb)]
+gc() #free up memrory and report the memory usage.
+seurat.data <- ScaleData(seurat.data)
+seurat.data <- RunPCA(seurat.data)
+seurat.data <- RunHarmony(seurat.data, group.by.vars="Dataset", assay.use = "originalexp")
+gc() #free up memrory and report the memory usage.
+ElbowPlot(seurat.data, ndims = 50) # choose dims
+# seurat.data <- RunUMAP(seurat.data, dims=1:20, reduction="harmony") # original from Sarvari
+seurat.data <- RunUMAP(seurat.data, dims=1:12, reduction="harmony") # original from Sarvari
+seurat.data <- FindNeighbors(object = seurat.data, dims = 1:2, reduction = "umap", k.param=10) # original from Sarvari
+seurat.data@project.name <- celltype.name
+saveRDS(seurat.data, paste0(Disk, Project.folder, "/", Rds.folder, "/", file.name, "_" ,celltype.file))
+gc() #free up memrory and report the memory usage.
+
+# save meta data
+meta.data <- seurat.data@meta.data
+saveRDS(meta.data, paste0(Disk, Project.folder, "/", Rds.folder, "/", file.name, "_", celltype.name, ".basic.meta.data.Rds"))
+gc() #free up memrory and report the memory usage.
+```
+
