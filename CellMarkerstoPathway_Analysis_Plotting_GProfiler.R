@@ -13,7 +13,7 @@ gc() #free up memrory and report the memory usage.
 memory.limit(size = 1e+13)
 
 # source(paste0("/media/jianie/Extreme SSD1/2022-09-01 STARR Combine/Project Parameters.R"), local = knitr::knit_global())
-source(paste0(Disk, Project.folder, "/", "Project Parameters.R"), local = knitr::knit_global())
+source(paste0(Disk, Project.folder, "/", codes.folder, "/", "Project Parameters.R"), local = knitr::knit_global())
 
 # # Prepare for KEGGPathways analysis
 library(pathview)

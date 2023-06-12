@@ -1,0 +1,185 @@
+"","sample_id","BMI","A1c_Value","BA_Group","medication_name_list","medication_name","med_list","med_strength_list","med_strength","List","Name2","Type","Prescription","OTC","DrugClass","Purpose"
+"1","STARR_015",34.6092307692308,6,"Older_PreD_Obese","medication_1_name","Lisinopril","1","med_1_strength","20 mg",126,"Lisinopril",NA,"Prescription",NA,"ACE inhibitor","It can treat high blood pressure and heart failure. It can also reduce the risk of death after a heart attack."
+"2","STARR_016",21.2051134731399,5.2,"Older_Lean","medication_1_name","Losartan","1","med_1_strength","100 mg",130,"Losartan",NA,"Prescription",NA,"angiotensin II receptor antagonists","It can treat high blood pressure. It can reduce the risk of stroke in patients with high blood pressure and an enlarged heart. It can also treat kidney disease in patients with diabetes."
+"3","STARR_026",25.1763085399449,5.6,"Older_Overweight","medication_1_name","Flecanide","1","med_1_strength","10 mg",80,"Flecainide",NA,"Prescription",NA,"Antiarrhythmic","It can treat and prevent serious irregular heartbeats (arrhythmias)."
+"4","STARR_041",23.8876530612245,5.6,"Diabetes","medication_1_name","Amlodipine","1","med_1_strength","10 mg",15,"Amlodipine",NA,"Prescription",NA,"Calcium channel blocker","It can treat high blood pressure and chest pain (angina)."
+"5","STARR_043",31.6726528040328,5.7,"Older_PreD_Obese","medication_1_name","Tamusulosin","1","med_1_strength","0.4mg",223,"Tamsulosin",NA,"Prescription",NA,"alpha blockers","It can treat an enlarged prostate (benign prostatic hyperplasia)."
+"6","STARR_049",25.4483181109378,5.1,"Older_Overweight","medication_1_name","KEPPRA","1","med_1_strength","500 MG",111,"Levetiracetam",NA,"Prescription",NA,"Anticonvulsant","It can treat seizures."
+"7","STARR_063",26.500341000682,4.9,"Older_Overweight","medication_1_name","Furosemide","1","med_1_strength","20 mg",89,"Furosemide",NA,"Prescription",NA,"Diuretic","It can treat fluid retention (edema) and swelling caused by congestive heart failure, liver disease, kidney disease, and other medical conditions."
+"8","STARR_069",20.0000208116545,5.5,"Older_Lean","medication_1_name",NA,"1","med_1_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"9","STARR_072",27.6779091642032,5.6,"Older_Overweight","medication_1_name","Pantoprazole","1","med_1_strength","40 mg",179,"Pantoprazole",NA,"Prescription",NA,"Proton-pump inhibitor","It can treat gastroesophageal reflux disease (GERD) and a damaged esophagus. It can also treat high levels of stomach acid caused by tumors."
+"10","STARR_077",30.7128754463348,5.9,"Older_PreD_Obese","medication_1_name","Pravastatin","1","med_1_strength","20 mg",190,"Pravastatin",NA,"Prescription",NA,"Statin_HMG-CoA reductase inhibitors","It can treat high cholesterol and triglyceride levels. This may reduce the risk of heart attack, stroke, and related health conditions."
+"11","STARR_079",19.5805184,5.4,"Older_Lean","medication_1_name","Metformin","1","med_1_strength","500 mg",140,"Metformin","biguanides","Prescription",NA,"Anti-diabetic medication","It can treat type 2 diabetes."
+"12","STARR_085",23.7911296186133,5.4,"Older_Lean","medication_1_name","Klor-con","1","med_1_strength","20 mg",113,"potassium chloride",NA,"Prescription",NA,"dietary supplement","a mineral used to prevent or to treat low blood levels of potassium (hypokalemia)."
+"13","STARR_051",25.2029561945713,5.3,"Older_Overweight","medication_1_name","Amlodipine","1","med_1_strength","5 mg",15,"Amlodipine",NA,"Prescription",NA,"Calcium channel blocker","It can treat high blood pressure and chest pain (angina)."
+"14","STARR_060",25.8562582097955,5.2,"Diabetes","medication_1_name","****NO MEDICATIONS*****","1","med_1_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"15","STARR_071",31.4703856749311,5.8,"Older_PreD_Obese","medication_1_name","Atorvastatin","1","med_1_strength","40 mg",27,"Atorvastatin",NA,"Prescription",NA,"Statin_HMG-CoA reductase inhibitors","It can treat high cholesterol and triglyceride levels. This may reduce the risk of angina, stroke, heart attack, and heart and blood vessel problems."
+"16","STARR_073",26.6228558699042,5.4,"Older_Overweight","medication_1_name","Lisinopril","1","med_1_strength","20 mg",126,"Lisinopril",NA,"Prescription",NA,"ACE inhibitor","It can treat high blood pressure and heart failure. It can also reduce the risk of death after a heart attack."
+"17","STARR_075",27.0112118921643,5.1,"Older_Overweight","medication_1_name","Crestor","1","med_1_strength","10 mg",51,"Rosuvastatin",NA,"Prescription",NA,"Statin_HMG-CoA reductase inhibitors","It can treat high cholesterol and triglyceride levels. This may reduce the risk of heart attack, stroke, and related health conditions."
+"18","STARR_081",29.6238645525396,7.2,"Diabetes","medication_1_name","Metformin","1","med_1_strength","500 MG",140,"Metformin","biguanides","Prescription",NA,"Anti-diabetic medication","It can treat type 2 diabetes."
+"19","STARR_082",22.1752728892849,5,"Older_Lean","medication_1_name","Levothyroxine","1","med_1_strength","88 MG",121,"Levothyroxine",NA,"Prescription",NA,"Hormone","It can treat hypothyroidism. It can also treat an enlarged thyroid gland and thyroid cancer."
+"20","STARR_083",21.724119558847,5.3,"Older_Lean","medication_1_name","Rosuvastatin","1","med_1_strength","40 mg",204,"Rosuvastatin",NA,"Prescription",NA,"Statin_HMG-CoA reductase inhibitors","It can treat high cholesterol and triglyceride levels. This may reduce the risk of heart attack, stroke, and related health conditions."
+"21","STARR_093",25.4594839293798,5.4,"Older_Overweight","medication_1_name","Pramipexole","1","med_1_strength","0.75",189,"Pramipexole",NA,"Prescription",NA,"Anti-parkinsonian","It can treat Parkinson's disease and restless legs syndrome."
+"22","STARR_095",23.3835014490572,5.8,"Diabetes","medication_1_name",NA,"1","med_1_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"23","STARR_104",33.7236231884058,5.3,"Diabetes","medication_1_name","allopranol","1","med_1_strength","300 miligrams",9,"Allopurinol",NA,"Prescription",NA,"xanthine oxidase inhibitors","It can treat gout and kidney stones."
+"24","STARR_015",34.6092307692308,6,"Older_PreD_Obese","medication_2_name","Atorvastatin","2","med_2_strength","40 mg",27,"Atorvastatin",NA,"Prescription",NA,"Statin_HMG-CoA reductase inhibitors","It can treat high cholesterol and triglyceride levels. This may reduce the risk of angina, stroke, heart attack, and heart and blood vessel problems."
+"25","STARR_016",21.2051134731399,5.2,"Older_Lean","medication_2_name","Metoprolol","2","med_2_strength","25 mg",145,"Metoprolol",NA,"Prescription",NA,"Beta blocker","It can treat high blood pressure, chest pain (angina), and heart failure. This may lower the risk of death after a heart attack."
+"26","STARR_026",25.1763085399449,5.6,"Older_Overweight","medication_2_name","Xarelto","2","med_2_strength","10 mg",251,"Rivaroxaban",NA,"Prescription",NA,"factor Xa inhibitors","It can treat and prevent blood clots. This may lower the risk of stroke, deep vein thrombosis (DVT), pulmonary embolism (PE), and similar conditions."
+"27","STARR_041",23.8876530612245,5.6,"Diabetes","medication_2_name","Fosinopril","2","med_2_strength","40 mg",88,"Fosinopril",NA,"Prescription",NA,"ACE inhibitor","treatment of hypertension and some types of chronic heart failure"
+"28","STARR_043",31.6726528040328,5.7,"Older_PreD_Obese","medication_2_name","Finesteride","2","med_2_strength","5.0 mg",77,"Finasteride",NA,"Prescription",NA,"5-alpha reductase inhibitors","It can treat enlarged prostate (benign prostatic hyperplasia). It can also treat hair loss in men."
+"29","STARR_049",25.4483181109378,5.1,"Older_Overweight","medication_2_name",NA,"2","med_2_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"30","STARR_063",26.500341000682,4.9,"Older_Overweight","medication_2_name","Oxybutymin","2","med_2_strength","5 mg",176,"Oxybutynin",NA,"Prescription",NA,"anticholinergics/antimuscarinics","It can treat overactive bladder."
+"31","STARR_069",20.0000208116545,5.5,"Older_Lean","medication_2_name",NA,"2","med_2_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"32","STARR_072",27.6779091642032,5.6,"Older_Overweight","medication_2_name","Pravastatin","2","med_2_strength","20 mg",190,"Pravastatin",NA,"Prescription",NA,"Statin_HMG-CoA reductase inhibitors","It can treat high cholesterol and triglyceride levels. This may reduce the risk of heart attack, stroke, and related health conditions."
+"33","STARR_077",30.7128754463348,5.9,"Older_PreD_Obese","medication_2_name",NA,"2","med_2_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"34","STARR_079",19.5805184,5.4,"Older_Lean","medication_2_name","Dorzalamide Opthamlic Solution","2","med_2_strength","2",57,"Dorzolamide Ophthalmic Solution",NA,"Prescription",NA,"carbonic anhydrase inhibitors","treat glaucoma"
+"35","STARR_085",23.7911296186133,5.4,"Older_Lean","medication_2_name","Lisinopril","2","med_2_strength","20/25 mg",126,"Lisinopril",NA,"Prescription",NA,"ACE inhibitor","It can treat high blood pressure and heart failure. It can also reduce the risk of death after a heart attack."
+"36","STARR_051",25.2029561945713,5.3,"Older_Overweight","medication_2_name","Losartan","2","med_2_strength","100 mg",130,"Losartan",NA,"Prescription",NA,"angiotensin II receptor antagonists","It can treat high blood pressure. It can reduce the risk of stroke in patients with high blood pressure and an enlarged heart. It can also treat kidney disease in patients with diabetes."
+"37","STARR_060",25.8562582097955,5.2,"Diabetes","medication_2_name",NA,"2","med_2_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"38","STARR_071",31.4703856749311,5.8,"Older_PreD_Obese","medication_2_name",NA,"2","med_2_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"39","STARR_073",26.6228558699042,5.4,"Older_Overweight","medication_2_name",NA,"2","med_2_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"40","STARR_075",27.0112118921643,5.1,"Older_Overweight","medication_2_name","Citalopram","2","med_2_strength","40 mg",43,"Citalopram",NA,"Prescription",NA,"Selective Serotonin Reuptake Inhibitor (SSRI)","It can treat depression."
+"41","STARR_081",29.6238645525396,7.2,"Diabetes","medication_2_name","Glipizide","2","med_2_strength","40 mg",93,"Glipizide","sulfonylurea","Prescription",NA,"Anti-diabetic medication","It can treat type 2 diabetes."
+"42","STARR_082",22.1752728892849,5,"Older_Lean","medication_2_name","Cyclobenzaprine","2","med_2_strength","10 mg",52,"Cyclobenzaprine",NA,"Prescription",NA,"Muscle relaxant","Muscle relaxant"
+"43","STARR_083",21.724119558847,5.3,"Older_Lean","medication_2_name","Aspirin","2","med_2_strength","81 mg",24,"Aspirin",NA,"Prescription","OTC","Nonsteroidal anti-inflammatory drug","It can treat pain, fever, headache, and inflammation. It can also reduce the risk of heart attack."
+"44","STARR_093",25.4594839293798,5.4,"Older_Overweight","medication_2_name","Adderall","2","med_2_strength","30 mg",3,"Amphetamines",NA,"Prescription",NA,"central nervous system stimulants","Treat attention deficit hyperactivity disorder (ADHD) and narcolepsy."
+"45","STARR_095",23.3835014490572,5.8,"Diabetes","medication_2_name",NA,"2","med_2_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"46","STARR_104",33.7236231884058,5.3,"Diabetes","medication_2_name","claritin","2","med_2_strength","10 mg",44,"claritin",NA,"OTC",NA,"Antihistamine","It can treat allergy symptoms and hives."
+"47","STARR_015",34.6092307692308,6,"Older_PreD_Obese","medication_3_name","Fluticasone","3","med_3_strength","50 mcg",84,"Fluticasone",NA,"Prescription",NA,"corticosteroids","It can treat pain, itching, and swelling caused by many skin diseases when applied topically. It can also prevent asthma attacks when inhaled."
+"48","STARR_016",21.2051134731399,5.2,"Older_Lean","medication_3_name","Amlopidine","3","med_3_strength","5 mg",16,"Amlodipine",NA,"Prescription",NA,"Calcium channel blocker","It can treat high blood pressure and chest pain (angina)."
+"49","STARR_026",25.1763085399449,5.6,"Older_Overweight","medication_3_name","Atorvastatin","3","med_3_strength","10 mg",27,"Atorvastatin",NA,"Prescription",NA,"Statin_HMG-CoA reductase inhibitors","It can treat high cholesterol and triglyceride levels. This may reduce the risk of angina, stroke, heart attack, and heart and blood vessel problems."
+"50","STARR_041",23.8876530612245,5.6,"Diabetes","medication_3_name","Metformin","3","med_3_strength","400 mg",140,"Metformin","biguanides","Prescription",NA,"Anti-diabetic medication","It can treat type 2 diabetes."
+"51","STARR_043",31.6726528040328,5.7,"Older_PreD_Obese","medication_3_name","Losartan","3","med_3_strength","50 mg",130,"Losartan",NA,"Prescription",NA,"angiotensin II receptor antagonists","It can treat high blood pressure. It can reduce the risk of stroke in patients with high blood pressure and an enlarged heart. It can also treat kidney disease in patients with diabetes."
+"52","STARR_049",25.4483181109378,5.1,"Older_Overweight","medication_3_name",NA,"3","med_3_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"53","STARR_063",26.500341000682,4.9,"Older_Overweight","medication_3_name","Losartan","3","med_3_strength","100 mg",130,"Losartan",NA,"Prescription",NA,"angiotensin II receptor antagonists","It can treat high blood pressure. It can reduce the risk of stroke in patients with high blood pressure and an enlarged heart. It can also treat kidney disease in patients with diabetes."
+"54","STARR_069",20.0000208116545,5.5,"Older_Lean","medication_3_name",NA,"3","med_3_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"55","STARR_072",27.6779091642032,5.6,"Older_Overweight","medication_3_name","Atenolol","3","med_3_strength","10 mg",26,"Atenolol",NA,"Prescription",NA,"Beta blocker","It can treat high blood pressure and chest pain (angina). It can also reduce the risk of death after a heart attack."
+"56","STARR_077",30.7128754463348,5.9,"Older_PreD_Obese","medication_3_name",NA,"3","med_3_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"57","STARR_079",19.5805184,5.4,"Older_Lean","medication_3_name",NA,"3","med_3_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"58","STARR_085",23.7911296186133,5.4,"Older_Lean","medication_3_name","Levothyroxine","3","med_3_strength","75 mg",121,"Levothyroxine",NA,"Prescription",NA,"Hormone","It can treat hypothyroidism. It can also treat an enlarged thyroid gland and thyroid cancer."
+"59","STARR_051",25.2029561945713,5.3,"Older_Overweight","medication_3_name","Sertraline","3","med_3_strength","50 mg",209,"Sertraline",NA,"Prescription",NA,"Selective Serotonin Reuptake Inhibitor (SSRI)","It can treat depression, obsessive-compulsive disorder (OCD), posttraumatic stress disorder (PTSD), premenstrual dysphoric disorder (PMDD), social anxiety disorder, and panic disorder."
+"60","STARR_060",25.8562582097955,5.2,"Diabetes","medication_3_name",NA,"3","med_3_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"61","STARR_071",31.4703856749311,5.8,"Older_PreD_Obese","medication_3_name",NA,"3","med_3_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"62","STARR_073",26.6228558699042,5.4,"Older_Overweight","medication_3_name",NA,"3","med_3_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"63","STARR_075",27.0112118921643,5.1,"Older_Overweight","medication_3_name","Singular","3","med_3_strength","20 mg",214,"Montelukast",NA,"Prescription",NA,"leukotriene receptor antagonists","It can treat allergies and prevent asthma attacks."
+"64","STARR_081",29.6238645525396,7.2,"Diabetes","medication_3_name","Benazepril","3","med_3_strength","40 mg",32,"Benazepril",NA,"Prescription",NA,"ACE inhibitor","It can treat high blood pressure."
+"65","STARR_082",22.1752728892849,5,"Older_Lean","medication_3_name","Diphenoxylate","3","med_3_strength","2.5 mg",56,"Diphenoxylate",NA,"Prescription",NA,"Antimotility","the treatment of diarrhea"
+"66","STARR_083",21.724119558847,5.3,"Older_Lean","medication_3_name","Guaifenesin","3","med_3_strength","400 mg",94,"Guaifenesin",NA,"Prescription","OTC","expectorants","It can thin mucus. This may make it easier to clear from the head, throat, and lungs."
+"67","STARR_093",25.4594839293798,5.4,"Older_Overweight","medication_3_name",NA,"3","med_3_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"68","STARR_095",23.3835014490572,5.8,"Diabetes","medication_3_name",NA,"3","med_3_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"69","STARR_104",33.7236231884058,5.3,"Diabetes","medication_3_name","obloid","3","med_3_strength",NA,169,"obloid",NA,NA,NA,NA,NA
+"70","STARR_015",34.6092307692308,6,"Older_PreD_Obese","medication_4_name","Fish Oil","4","med_4_strength","1000 mg",78,"Fish Oil",NA,"OTC",NA,"dietary supplement",NA
+"71","STARR_016",21.2051134731399,5.2,"Older_Lean","medication_4_name","Lumigan","4","med_4_strength","0.01",134,"Lumigan",NA,"Prescription",NA,"prostamides.","It can reduce pressure inside the eye in its eye drops form. As an eyelash solution, it can help eyelashes grow."
+"72","STARR_026",25.1763085399449,5.6,"Older_Overweight","medication_4_name","Aspirin","4","med_4_strength","81",24,"Aspirin",NA,"Prescription","OTC","Nonsteroidal anti-inflammatory drug","It can treat pain, fever, headache, and inflammation. It can also reduce the risk of heart attack."
+"73","STARR_041",23.8876530612245,5.6,"Diabetes","medication_4_name","Iron","4","med_4_strength","325 mg",106,"Iron",NA,"OTC",NA,"dietary supplement",NA
+"74","STARR_043",31.6726528040328,5.7,"Older_PreD_Obese","medication_4_name","Rosuvastatin","4","med_4_strength","10 mg",204,"Rosuvastatin",NA,"Prescription",NA,"Statin_HMG-CoA reductase inhibitors","It can treat high cholesterol and triglyceride levels. This may reduce the risk of heart attack, stroke, and related health conditions."
+"75","STARR_049",25.4483181109378,5.1,"Older_Overweight","medication_4_name",NA,"4","med_4_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"76","STARR_063",26.500341000682,4.9,"Older_Overweight","medication_4_name",NA,"4","med_4_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"77","STARR_069",20.0000208116545,5.5,"Older_Lean","medication_4_name",NA,"4","med_4_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"78","STARR_072",27.6779091642032,5.6,"Older_Overweight","medication_4_name","Amlodipine","4","med_4_strength","5 mg",15,"Amlodipine",NA,"Prescription",NA,"Calcium channel blocker","It can treat high blood pressure and chest pain (angina)."
+"79","STARR_077",30.7128754463348,5.9,"Older_PreD_Obese","medication_4_name",NA,"4","med_4_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"80","STARR_079",19.5805184,5.4,"Older_Lean","medication_4_name",NA,"4","med_4_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"81","STARR_085",23.7911296186133,5.4,"Older_Lean","medication_4_name",NA,"4","med_4_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"82","STARR_051",25.2029561945713,5.3,"Older_Overweight","medication_4_name","Levothyroxine","4","med_4_strength","50",121,"Levothyroxine",NA,"Prescription",NA,"Hormone","It can treat hypothyroidism. It can also treat an enlarged thyroid gland and thyroid cancer."
+"83","STARR_060",25.8562582097955,5.2,"Diabetes","medication_4_name",NA,"4","med_4_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"84","STARR_071",31.4703856749311,5.8,"Older_PreD_Obese","medication_4_name",NA,"4","med_4_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"85","STARR_073",26.6228558699042,5.4,"Older_Overweight","medication_4_name",NA,"4","med_4_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"86","STARR_075",27.0112118921643,5.1,"Older_Overweight","medication_4_name","Zyrtec","4","med_4_strength","10 mg",255,"Cetirizine",NA,"Prescription",NA,"Antihistamine","It can treat hay fever and allergy symptoms, hives, and itching."
+"87","STARR_081",29.6238645525396,7.2,"Diabetes","medication_4_name",NA,"4","med_4_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"88","STARR_082",22.1752728892849,5,"Older_Lean","medication_4_name","Aspirin","4","med_4_strength","81 mg",24,"Aspirin",NA,"Prescription","OTC","Nonsteroidal anti-inflammatory drug","It can treat pain, fever, headache, and inflammation. It can also reduce the risk of heart attack."
+"89","STARR_083",21.724119558847,5.3,"Older_Lean","medication_4_name",NA,"4","med_4_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"90","STARR_093",25.4594839293798,5.4,"Older_Overweight","medication_4_name",NA,"4","med_4_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"91","STARR_095",23.3835014490572,5.8,"Diabetes","medication_4_name",NA,"4","med_4_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"92","STARR_104",33.7236231884058,5.3,"Diabetes","medication_4_name","pepsid","4","med_4_strength","20 mg",183,"Famotidine",NA,"Prescription",NA,"H2 blockers","It can treat ulcers, gastroesophageal reflux disease (GERD), and conditions that cause excess stomach acid. It can also treat heartburn caused by acid indigestion."
+"93","STARR_015",34.6092307692308,6,"Older_PreD_Obese","medication_5_name","Vitamin D3","5","med_5_strength","2000 IU",247,"Vitamin D3",NA,"OTC",NA,"dietary supplement",NA
+"94","STARR_016",21.2051134731399,5.2,"Older_Lean","medication_5_name","Fluticason","5","med_5_strength",NA,83,"Fluticasone",NA,"Prescription",NA,"corticosteroids","It can treat pain, itching, and swelling caused by many skin diseases when applied topically. It can also prevent asthma attacks when inhaled."
+"95","STARR_026",25.1763085399449,5.6,"Older_Overweight","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"96","STARR_041",23.8876530612245,5.6,"Diabetes","medication_5_name","Simvastatin","5","med_5_strength","20 mg",211,"Simvastatin",NA,"Prescription",NA,"Statin_HMG-CoA reductase inhibitors","It can treat high cholesterol and triglyceride levels. This may reduce the risk of heart attack, stroke, and related health conditions."
+"97","STARR_043",31.6726528040328,5.7,"Older_PreD_Obese","medication_5_name","TRAZADONE","5","med_5_strength","50 MG",234,"Trazodone",NA,"Prescription",NA,"serotonin-antagonist-and-reuptake-inhibitor","It can treat depression."
+"98","STARR_049",25.4483181109378,5.1,"Older_Overweight","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"99","STARR_063",26.500341000682,4.9,"Older_Overweight","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"100","STARR_069",20.0000208116545,5.5,"Older_Lean","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"101","STARR_072",27.6779091642032,5.6,"Older_Overweight","medication_5_name","Aspirin","5","med_5_strength","81 mg",24,"Aspirin",NA,"Prescription","OTC","Nonsteroidal anti-inflammatory drug","It can treat pain, fever, headache, and inflammation. It can also reduce the risk of heart attack."
+"102","STARR_077",30.7128754463348,5.9,"Older_PreD_Obese","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"103","STARR_079",19.5805184,5.4,"Older_Lean","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"104","STARR_085",23.7911296186133,5.4,"Older_Lean","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"105","STARR_051",25.2029561945713,5.3,"Older_Overweight","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"106","STARR_060",25.8562582097955,5.2,"Diabetes","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"107","STARR_071",31.4703856749311,5.8,"Older_PreD_Obese","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"108","STARR_073",26.6228558699042,5.4,"Older_Overweight","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"109","STARR_075",27.0112118921643,5.1,"Older_Overweight","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"110","STARR_081",29.6238645525396,7.2,"Diabetes","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"111","STARR_082",22.1752728892849,5,"Older_Lean","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"112","STARR_083",21.724119558847,5.3,"Older_Lean","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"113","STARR_093",25.4594839293798,5.4,"Older_Overweight","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"114","STARR_095",23.3835014490572,5.8,"Diabetes","medication_5_name",NA,"5","med_5_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"115","STARR_104",33.7236231884058,5.3,"Diabetes","medication_5_name","aspirin","5","med_5_strength","325 mg",23,"Aspirin",NA,"Prescription","OTC","Nonsteroidal anti-inflammatory drug","It can treat pain, fever, headache, and inflammation. It can also reduce the risk of heart attack."
+"116","STARR_015",34.6092307692308,6,"Older_PreD_Obese","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"117","STARR_016",21.2051134731399,5.2,"Older_Lean","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"118","STARR_026",25.1763085399449,5.6,"Older_Overweight","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"119","STARR_041",23.8876530612245,5.6,"Diabetes","medication_6_name","Omeprazole","6","med_6_strength","20 mg",173,"Omeprazole",NA,"Prescription",NA,"Proton-pump inhibitor","It can treat heartburn, a damaged esophagus, stomach ulcers, and gastroesophageal reflux disease (GERD)."
+"120","STARR_043",31.6726528040328,5.7,"Older_PreD_Obese","medication_6_name","NASACORT","6","med_6_strength","55 MCG",159,"Triamcinolone",NA,"Prescription",NA,"glucocorticoid","treat allergy symptoms"
+"121","STARR_049",25.4483181109378,5.1,"Older_Overweight","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"122","STARR_063",26.500341000682,4.9,"Older_Overweight","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"123","STARR_069",20.0000208116545,5.5,"Older_Lean","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"124","STARR_072",27.6779091642032,5.6,"Older_Overweight","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"125","STARR_077",30.7128754463348,5.9,"Older_PreD_Obese","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"126","STARR_079",19.5805184,5.4,"Older_Lean","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"127","STARR_085",23.7911296186133,5.4,"Older_Lean","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"128","STARR_051",25.2029561945713,5.3,"Older_Overweight","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"129","STARR_060",25.8562582097955,5.2,"Diabetes","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"130","STARR_071",31.4703856749311,5.8,"Older_PreD_Obese","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"131","STARR_073",26.6228558699042,5.4,"Older_Overweight","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"132","STARR_075",27.0112118921643,5.1,"Older_Overweight","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"133","STARR_081",29.6238645525396,7.2,"Diabetes","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"134","STARR_082",22.1752728892849,5,"Older_Lean","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"135","STARR_083",21.724119558847,5.3,"Older_Lean","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"136","STARR_093",25.4594839293798,5.4,"Older_Overweight","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"137","STARR_095",23.3835014490572,5.8,"Diabetes","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"138","STARR_104",33.7236231884058,5.3,"Diabetes","medication_6_name",NA,"6","med_6_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"139","STARR_015",34.6092307692308,6,"Older_PreD_Obese","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"140","STARR_016",21.2051134731399,5.2,"Older_Lean","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"141","STARR_026",25.1763085399449,5.6,"Older_Overweight","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"142","STARR_041",23.8876530612245,5.6,"Diabetes","medication_7_name","Allegra","7","med_7_strength","100 mg",8,"Allegra",NA,"Prescription","OTC","Antihistamine","It can treat hay fever symptoms. It can also treat chronic skin hives and itching."
+"143","STARR_043",31.6726528040328,5.7,"Older_PreD_Obese","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"144","STARR_049",25.4483181109378,5.1,"Older_Overweight","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"145","STARR_063",26.500341000682,4.9,"Older_Overweight","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"146","STARR_069",20.0000208116545,5.5,"Older_Lean","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"147","STARR_072",27.6779091642032,5.6,"Older_Overweight","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"148","STARR_077",30.7128754463348,5.9,"Older_PreD_Obese","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"149","STARR_079",19.5805184,5.4,"Older_Lean","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"150","STARR_085",23.7911296186133,5.4,"Older_Lean","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"151","STARR_051",25.2029561945713,5.3,"Older_Overweight","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"152","STARR_060",25.8562582097955,5.2,"Diabetes","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"153","STARR_071",31.4703856749311,5.8,"Older_PreD_Obese","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"154","STARR_073",26.6228558699042,5.4,"Older_Overweight","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"155","STARR_075",27.0112118921643,5.1,"Older_Overweight","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"156","STARR_081",29.6238645525396,7.2,"Diabetes","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"157","STARR_082",22.1752728892849,5,"Older_Lean","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"158","STARR_083",21.724119558847,5.3,"Older_Lean","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"159","STARR_093",25.4594839293798,5.4,"Older_Overweight","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"160","STARR_095",23.3835014490572,5.8,"Diabetes","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"161","STARR_104",33.7236231884058,5.3,"Diabetes","medication_7_name",NA,"7","med_7_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"162","STARR_015",34.6092307692308,6,"Older_PreD_Obese","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"163","STARR_016",21.2051134731399,5.2,"Older_Lean","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"164","STARR_026",25.1763085399449,5.6,"Older_Overweight","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"165","STARR_041",23.8876530612245,5.6,"Diabetes","medication_8_name","Durezol","8","med_8_strength","5 ml",61,"Durezol",NA,"Prescription",NA,"corticosteroids","It can treat eye irritation and inflammation."
+"166","STARR_043",31.6726528040328,5.7,"Older_PreD_Obese","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"167","STARR_049",25.4483181109378,5.1,"Older_Overweight","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"168","STARR_063",26.500341000682,4.9,"Older_Overweight","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"169","STARR_069",20.0000208116545,5.5,"Older_Lean","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"170","STARR_072",27.6779091642032,5.6,"Older_Overweight","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"171","STARR_077",30.7128754463348,5.9,"Older_PreD_Obese","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"172","STARR_079",19.5805184,5.4,"Older_Lean","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"173","STARR_085",23.7911296186133,5.4,"Older_Lean","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"174","STARR_051",25.2029561945713,5.3,"Older_Overweight","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"175","STARR_060",25.8562582097955,5.2,"Diabetes","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"176","STARR_071",31.4703856749311,5.8,"Older_PreD_Obese","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"177","STARR_073",26.6228558699042,5.4,"Older_Overweight","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"178","STARR_075",27.0112118921643,5.1,"Older_Overweight","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"179","STARR_081",29.6238645525396,7.2,"Diabetes","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"180","STARR_082",22.1752728892849,5,"Older_Lean","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"181","STARR_083",21.724119558847,5.3,"Older_Lean","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"182","STARR_093",25.4594839293798,5.4,"Older_Overweight","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"183","STARR_095",23.3835014490572,5.8,"Diabetes","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
+"184","STARR_104",33.7236231884058,5.3,"Diabetes","medication_8_name",NA,"8","med_8_strength",NA,NA,NA,NA,NA,NA,NA,NA
