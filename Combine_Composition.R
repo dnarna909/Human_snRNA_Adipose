@@ -5,7 +5,7 @@ memory.limit(size = 1e+13)
 
 # import parameters and packages --------------------------------------------------------------------------------------------
 # source(paste0("/media/jianie/Extreme SSD1/2022-09-01 STARR_SGLT2 Combine/Project Parameters.R"), local = knitr::knit_global())
-source(paste0(paste0(Disk, Project.folder, "/", "Project Parameters.R")), local = knitr::knit_global())
+source(paste0(paste0(Disk, Project.folder, "/", codes.folder, "/", "Project Parameters.R")), local = knitr::knit_global())
 library("RColorBrewer")
 library("ggpubr")
 library(rstatix)

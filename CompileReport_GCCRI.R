@@ -911,8 +911,6 @@ rmarkdown::render(input= paste0(Disk, Project.folder, "/", codes.folder, "/", "M
                                                  '.html')))
 rm(export.folder, Select_Group, Sample.meta.file, file.variables, file.variables2 )
 
-
-
 export.folder = "ML.Variables";
 Select_Group = "Compare_Group2"; 
 Sample.meta.file = "SAT_Sample.meta.data.Rds";
@@ -925,6 +923,23 @@ rmarkdown::render(input= paste0(Disk, Project.folder, "/", codes.folder, "/", "M
                                                  Select_Group, 
                                                  '.html')))
 rm(export.folder, Select_Group, Sample.meta.file, file.variables, file.variables2)
+
+
+export.folder = "ML.Variables";
+Select_Group = "BA_Group"; Select_Group.names =  c("Middle_Lean", "Middle_Overweight", "Older_Lean", "Older_Overweight") ; # Healthy aging group
+analysis.group = "HealthyGroups"
+Sample.meta.file = "SAT_Sample.meta.data.Rds";
+file.variables = "SAT_Label_2000_Senescence_ModuleScoreAve.df.Rds";
+file.variables2 = "SAT_Label_2000_Subtype_Composition.combine.Rds";
+# charact.variables = c("Gender", "Ethnicity", "Group", "Pre_Post")
+rmarkdown::render(input= paste0(Disk, Project.folder, "/", codes.folder, "/", "Main_08_ML_Fat_Variables.R"), 
+                  output_format= "html_document",
+                  output_file = file.path(paste0(Disk, Project.folder, "/", html.folder), 
+                                          paste0('Main_08_ML_Fat_Variables_', 
+                                                 analysis.group, 
+                                                 '.html')))
+rm(export.folder, Select_Group, Select_Group.names, Sample.meta.file, file.variables, file.variables2 )
+
 
 ## ML in all variables Random Forest -----------
 # export.folder = "Compositions"
@@ -973,12 +988,49 @@ rmarkdown::render(input= paste0(Disk, Project.folder, "/", codes.folder, "/", "P
                   output_format= "html_document",
                   output_file = file.path(paste0(Disk, Project.folder, "/", html.folder), 
                                           paste0('Plotting_Figure_Composition_Regression_Level2_', 
-                                                 # stringr::str_split(file.type, ".Rds")[[1]][1], 
+                                                 analysis.group, 
                                                  '.html')))
-rm(export.folder, x.factor, Compare.group )
+rm(export.folder,Select_Group, Select_Group.names, x.factor, Compare.group , analysis.group )
 
+export.folder = "Compositions"
 Select_Group = "Treatment_Group"; Select_Group.names =  c("Notreatment", "NUT_Pre", "SGLT2i_Pre") ; # All no treatment groups
-Select_Group = "BA_Group"; Select_Group.names =  c("Older_Lean", "Older_Overweight", "Older_PreD_Obese", "Diabetes") ; # BMI group
+x.factor = "Age"; Compare.group = c("Age", "BMI", "A1c_Value","Gender", "Ethnicity"); # "Insulin", , "FastingGlucose"
+analysis.group = "SGLT2iGroups"
+rmarkdown::render(input= paste0(Disk, Project.folder, "/", codes.folder, "/", "Plotting_Figure_Composition_Regression_Level2.R"), 
+                  output_format= "html_document",
+                  output_file = file.path(paste0(Disk, Project.folder, "/", html.folder), 
+                                          paste0('Plotting_Figure_Composition_Regression_Level2_', 
+                                                 analysis.group, 
+                                                 '.html')))
+rm(export.folder,Select_Group, Select_Group.names, x.factor, Compare.group , analysis.group )
+
+
+# export.folder = "Compositions"
+# Select_Group = "BA_Group"; Select_Group.names =  c("Older_Lean", "Older_Overweight", "Older_PreD_Obese", "Diabetes") ; # BMI group
+# x.factor = "Age"; Compare.group = c("Age", "BMI", "A1c_Value","Gender", "Ethnicity"); # "Insulin", , "FastingGlucose"
+# analysis.group = "BMIGroups"
+# rmarkdown::render(input= paste0(Disk, Project.folder, "/", codes.folder, "/", "Plotting_Figure_Composition_Regression_Level2.R"), 
+#                   output_format= "html_document",
+#                   output_file = file.path(paste0(Disk, Project.folder, "/", html.folder), 
+#                                           paste0('Plotting_Figure_Composition_Regression_Level2_', 
+#                                                  analysis.group, 
+#                                                  '.html')))
+# rm(export.folder, x.factor, Compare.group )
+
+
+export.folder = "Compositions"
+Select_Group = "BA_Group"; Select_Group.names =  c("Middle_Lean", "Middle_Overweight", "Middle_Obese", 
+                                                   "Older_PreD_Lean", "Older_PreD_Overweight", 
+                                                   "Older_Lean", "Older_Overweight", "Older_PreD_Obese") ; 
+x.factor = "Age"; Compare.group = c("Age", "BMI", "A1c_Value","Gender", "Ethnicity"); # "Insulin", , "FastingGlucose"
+analysis.group = "NoDiabetesGroups"
+rmarkdown::render(input= paste0(Disk, Project.folder, "/", codes.folder, "/", "Plotting_Figure_Composition_Regression_Level2.R"), 
+                  output_format= "html_document",
+                  output_file = file.path(paste0(Disk, Project.folder, "/", html.folder), 
+                                          paste0('Plotting_Figure_Composition_Regression_Level2_', 
+                                                 analysis.group, 
+                                                 '.html')))
+rm(export.folder,Select_Group, Select_Group.names, x.factor, Compare.group , analysis.group )
 
 
 
@@ -1913,6 +1965,21 @@ rm(seurat.files , file.type, sample.file.type, markers.files, Select_Group, grou
 
 ## 5. Markers to GProfiler Pathway Analysis and Plotting  ---------
 ### Select_Group
+markers.files = c(
+  "FindMarkers_SAT_Label_2000/Annotation.Level2.Markers/SAT_Label_2000_Annotation.Select_Group_Combined.Mean.Rds"
+  ,"FindMarkers_SAT_Label_2000/Subtype.Level2.Markers/SAT_Label_2000_Endothelial_Subtype.Select_Group_Combined.Mean.Rds"
+  ,"FindMarkers_SAT_Label_2000/Subtype.Level2.Markers/SAT_Label_2000_Adipocytes_Subtype.Select_Group_Combined.Mean.Rds"
+  ,"FindMarkers_SAT_Label_2000/Subtype.Level2.Markers/SAT_Label_2000_FAP_Subtype.Select_Group_Combined.Mean.Rds"
+  ,"FindMarkers_SAT_Label_2000/Subtype.Level2.Markers/SAT_Label_2000_Immune_Subtype.Select_Group_Combined.Mean.Rds"
+); Select_Group = "Select_Group";organism = "hsapiens";
+rmarkdown::render(input= paste0(Disk, Project.folder, "/", codes.folder, "/", "CellMarkerstoPathway_Analysis_Plotting_GProfiler.R"), output_format= "html_document",
+                  output_file = file.path(paste0(Disk, Project.folder, "/", html.folder), 
+                                          paste0('CellMarkers_GProfiler_', 
+                                                 "SAT_Label_2000", "_", Select_Group, 
+                                                 '.html')))
+rm(markers.files, organism, Select_Group)
+
+
 ### Compare_Group1
 markers.files = c(
   "FindMarkers_SAT_Label_2000/Annotation.Level2.Markers/SAT_Label_2000_Annotation.Compare_Group1_Combined.Mean.Rds"
@@ -2480,7 +2547,7 @@ rmarkdown::render(input= paste0(Disk,"00_Functions_Refs", "/FunctionCodes/", "Ma
 rm(markers.files, Select_Group, type, compare.groups, compare.groups1, compare.groups2)
 
 ## 9. Markers to GProfiler Pathway Analysis and Plotting  ---------
-### Select_Group
+### Compare_Group1
 markers.files = c(
   "FindMarkers_SAT_Label_2000/Annotation.Level2.Markers/SAT_Label_2000_Annotation.Compare_Group1_BA_Group_Combined.Mean.Rds"
   , "FindMarkers_SAT_Label_2000/Subtype.Level2.Markers/SAT_Label_2000_Endothelial_Subtype.Compare_Group1_BA_Group_Combined.Mean.Rds"

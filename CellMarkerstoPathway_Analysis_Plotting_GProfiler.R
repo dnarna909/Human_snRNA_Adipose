@@ -325,6 +325,7 @@ for (markers.file in markers.files) {
                           ifelse(Direction == "Down", log10((!!sym( paste0("less", "_" , "p.val") ))  ), NA)),
                Direction = factor(Direction, levels = c("Up", "Down", "NS")) )
     })
+    sum.Path.list.final <- sum.Path.list.final[sapply(sum.Path.list.final, nrow)>0] # Remove empty zero length rows in list with R
     for ( path.name1 in names(sum.Path.list.final) ) {
       sum.Path.list.final[[path.name1]][["path.name"]] <- path.name1
     }
@@ -594,8 +595,8 @@ for (markers.file in markers.files) {
               left_join(df.sum2, by = c("id", "path.name"))  %>% 
               dplyr::filter(abs(diff.y.path) >= 0.5) %>%  
               dplyr::filter(abs(y) >= -log10(0.05)) %>%
-              arrange(-y) %>%  
-              mutate(rank.y = 1:n())  
+              arrange(-y) # %>%  
+              # mutate(rank.y = 1:n())  
             df <- pathways %>%
               left_join(df.sum2, by = c("id", "path.name"))  %>%
               mutate(select.plot = ifelse(id %in% c(select.rows%>% ungroup() %>% 
@@ -628,7 +629,7 @@ for (markers.file in markers.files) {
                       compared.groups = factor(compared.groups, levels = rev(names(Result[[ll]]))))
           }
         }
-        if (nrow(df) >0){
+        if (nrow(df  %>% dplyr::filter(select.plot == "Yes")) >0){
           Result.Path.list.final.plot[[ll]][[nn]] <- df
           df <- df  %>% dplyr::filter(select.plot == "Yes") 
           p1 <- ggbarplot(df , x = "compared.groups", y = "y", 

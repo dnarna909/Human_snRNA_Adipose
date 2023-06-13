@@ -209,23 +209,187 @@ for (file in files) {
       }
     }
     
-   
+    # ML for variable selection in Composition_3 --------          
+    mse.df <- data.frame()
+    Import.list <- list()
+    Test.list <- list()
+    per.var.df <- data.frame()
+    if (x.name == label.name){
+      for (uu in  clusters){
+        uu <- as.vector(uu)
+        data <- Composition_3 %>%
+          dplyr::filter(!!sym(x.name) == uu ) %>%
+          dplyr::select(one_of(c("composition", numeric.variables))) %>%
+          dplyr::filter(complete.cases(.)) 
+        
+        if (length(unique(data$composition)) > 5 ){
+          n <- nrow(data)
+          set.seed (13)
+          ntest <- trunc(n / 2)
+          trainid <- sample (1:n, ntest)
+          testid <- (1:n)[-trainid]
+          if (length(unique(data[trainid,]$composition)) > 5 ){
+            library("randomForest")
+            library(caret)
+            
+            print(uu)
+            # bagging -------------------------
+            #' bagging is simply a special case of a random forest with m = p
+            rf.nhanes <- randomForest(composition~., data = data, subset = trainid, 
+                                      mtry = length(numeric.variables) ,
+                                      importance = TRUE)
+            rf.nhanes
+            per.var.df[uu, "bagging.per.var"] <- round(100 * rf.nhanes$rsq[length(rf.nhanes$rsq)], digits = 2)
+            
+            # varImpPlot(rf.nhanes) 
+            y.pred <- predict(rf.nhanes, newdata = data[testid,])
+            plot(x = y.pred, y= data[testid, "composition"]) 
+            abline (0 , 1)
+            mse.df[uu, "bagging.MSE"] <- mean (( y.pred - data[testid, "composition"] ) ^2)
+            cols.names <- colnames(as.data.frame(importance ( rf.nhanes )))
+            Import.list[[uu]] <- as.data.frame(importance ( rf.nhanes )) %>% 
+              `colnames<-`(paste0(cols.names, ".bagging")) %>%
+              tibble::rownames_to_column(var = "rowname")
+            Test.list[[uu]][["bagging"]] <- rf.nhanes
+            
+            # confusionMatrix( as.factor(predict(rf.nhanes, data[testid,])), as.factor(data[testid, "composition"]))
+            
+            # randomForest ------------------------
+            # Summary: 
+            # The random forest was built to predict HbA1c.
+            # The default number of trees is 1000
+            # 4 variables were considered at each internal node by default when building the trees
+            
+            # Step 3.2: Plot the training MSE by number of trees to select optional number of trees.**
+            # 
+            rf.nhanes <- randomForest(composition~., data = data, subset = trainid,
+                                      mtry = length(numeric.variables) ,
+                                      ntree = 1000)
+            rf.nhanes
+            y.pred <- predict(rf.nhanes, newdata = data[testid,])
+            mean (( y.pred - data[testid, "composition"] ) ^2)
+            plot(x = y.pred, y= data[testid, "composition"]) 
+            abline (0 , 1)
+            per.var.df[uu, "randomForest.per.var"] <- round(100 * rf.nhanes$rsq[length(rf.nhanes$rsq)], digits = 2)
+            mse.df[uu, "randomForest.MSE"] <- mean (( y.pred - data[testid, "composition"] ) ^2)
+            cols.names <- colnames(as.data.frame(importance ( rf.nhanes )))
+            Import.list[[uu]] <-  full_join(Import.list[[uu]], 
+                                            as.data.frame(importance ( rf.nhanes )) %>% 
+                                              `colnames<-`(paste0(cols.names, ".randomForest"))%>%
+                                              tibble::rownames_to_column(var = "rowname"), by = "rowname")
+            # rf.mse <- data.frame(Trees = rep(1:1000), mse = c(rf.nhanes$mse))
+            # ggplot(data = rf.mse, aes(x=Trees, y=mse)) + geom_point() + geom_line() + 
+            #   ggtitle("Changes in training MSE by number of trees, p = 4") + theme(plot.title = element_text(hjust = 0.5))
+            Test.list[[uu]][["randomForest"]] <- rf.nhanes
+            
+            rf.nhanes <- randomForest(composition~., data = data, subset = trainid,
+                                      mtry = length(numeric.variables)/2 ,
+                                      importance = TRUE)
+            rf.nhanes
+            y.pred <- predict(rf.nhanes, newdata = data[testid,])
+            mean (( y.pred - data[testid, "composition"] ) ^2)
+            plot(x = y.pred, y= data[testid, "composition"]) 
+            abline (0 , 1)
+            per.var.df[uu, "randomForest2.per.var"] <- round(100 * rf.nhanes$rsq[length(rf.nhanes$rsq)], digits = 2)
+            mse.df[uu, "randomForest2.MSE"] <- mean (( y.pred - data[testid, "composition"] ) ^2)
+            # varImpPlot ( rf.nhanes ) 
+            cols.names <- colnames(as.data.frame(importance ( rf.nhanes )))
+            Import.list[[uu]] <-   full_join(Import.list[[uu]], 
+                                             as.data.frame(importance ( rf.nhanes )) %>% 
+                                               `colnames<-`(paste0(cols.names, ".randomForest2"))%>%
+                                               tibble::rownames_to_column(var = "rowname"), by = "rowname")
+            #' The first is based upon
+            #' the mean decrease of accuracy in predictions on the out of bag samples when
+            #' a given variable is permuted.
+            #' 
+            #' The second is a measure of the total decrease
+            #' in node impurity that results from splits over that variable, averaged over
+            #' all trees
+            Test.list[[uu]][["randomForest2"]] <- rf.nhanes
+            
+            # boosting --------------------------------------
+            library (gbm)
+            set.seed (1)
+            # boost.data <- gbm ( composition ~ . , data = data[trainid,],
+            #                     distribution = "gaussian" , n.trees = 5000 ,
+            #                     interaction.depth = 4)
+            # summary(boost.data)
+            # # plot ( boost.data , i = "GDF.15" )
+            # # plot ( boost.data , i = "Blood.Pressure.Diastolic" )
+            # yhat.boost <- predict ( boost.data ,
+            #                         newdata = data[testid,] , n.trees = 5000)
+            # mean (( yhat.boost - data[testid, "composition"] ) ^2)
+            # mse.df[uu, "boosting.MSE"] <- mean (( yhat.boost - data[testid, "composition"] ) ^2)
+            # cols.names <- colnames(as.data.frame(summary ( boost.data )))
+            # Import.list[[uu]] <- full_join(Import.list[[uu]],
+            #                                as.data.frame(summary (boost.data )) %>%
+            #                                  `colnames<-`(paste0(cols.names, ".boosting"))%>%
+            #                                  tibble::rownames_to_column(var = "rowname"), by =  "rowname")
+            # Test.list[[uu]][["boosting"]] <-boost.data
+            # 
+            # 
+            # boost.data <- gbm ( composition ~ . , data = data[trainid,],
+            #                     distribution = "gaussian" , n.trees = 5000 ,
+            #                     interaction.depth = 4, shrinkage = 0.2 , verbose =F)
+            # summary(boost.data)
+            # # plot ( boost.data , i = "GDF.15" )
+            # # plot ( boost.data , i = "Blood.Pressure.Diastolic" )
+            # yhat.boost <- predict ( boost.data ,
+            #                         newdata = data[testid,] , n.trees = 5000)
+            # mean (( yhat.boost - data[testid, "composition"] ) ^2)
+            # mse.df[uu, "boosting2.MSE"] <- mean (( yhat.boost - data[testid, "composition"] ) ^2)
+            # cols.names <- colnames(as.data.frame(summary ( boost.data )))
+            # Import.list[[uu]] <- full_join(Import.list[[uu]], 
+            #                                as.data.frame(summary (boost.data )) %>% 
+            #                                  `colnames<-`(paste0(cols.names, ".boosting2"))%>%
+            #                                  tibble::rownames_to_column(var = "rowname"), by =  "rowname")
+            # Test.list[[uu]][["boosting2"]] <-boost.data
+            
+            # Bayesian Additive Regression Trees --------------------------------------------
+            library (BART)
+            x <- data [ , -which(names(data) %in% c("composition"))]
+            y <- data [ , "composition" ]
+            xtrain <- x [ trainid, ]
+            ytrain <- y [ trainid ]
+            xtest <- x [ testid , ]
+            ytest <- y [ testid ]
+            set.seed (1)
+            bartfit <- gbart ( xtrain , ytrain , x.test = xtest )
+            yhat.bart <- bartfit$yhat.test.mean
+            mean (( ytest - yhat.bart ) ^2)
+            ord <- order ( bartfit $varcount.mean , decreasing = T )
+            bartfit$varcount.mean[ord]
+            mse.df[uu, "BART.MSE"] <- mean (( ytest - yhat.bart ) ^2)
+            cols.names <- colnames(as.data.frame(bartfit$varcount.mean[ord]))
+            Import.list[[uu]] <- full_join(Import.list[[uu]], 
+                                           as.data.frame(bartfit$varcount.mean[ord]) %>% 
+                                             `colnames<-`(paste0(cols.names, ".BART"))%>%
+                                             tibble::rownames_to_column(var = "rowname"), by =  "rowname")
+            Test.list[[uu]][["BART"]] <-bartfit
+            print(uu)
+          }
+        }
+      } 
+      save(mse.df,  Import.list , Test.list, data, trainid,   testid , per.var.df,
+           file = paste0(Disk, Project.folder, "/", Rds.folder, "/", export.folder, ".VariableSelection", "/", file.name, "_", x.name,"_",analysis.group , "_", "Composition_ML_Variables.RData")
+      )
+    }
     }
 }
 
-# rm(dir1, dir0,  files, file,
-#    file.name, Annotation.file.name, Subtype.file.name,
-#    celltype.name, list.name, label.name, x.name,
-#    Composition_3, Composition,
-#    clusters.lists, Composition.lists, clusters
-# )
-# rm(bartfit, Composition_2, Corr.Result.pearson.pairs, data,
-#    g, Import.list, m2, model2, mse.df,
-#                   Multi.Regre.Result.list, per.var.df, rf.nhanes,
-#                   Test.list, x, xtest, xtrain,
-#    cell, cols, cols.names, formula2, n, ntest, numeric.variables,
-#    ord, RP, testid, trainid, uu, y, y.pred, yhat.bart, ytest, ytrain
-#    )
+rm(dir1, dir0,  files, file,
+   file.name, Annotation.file.name, Subtype.file.name,
+   celltype.name, list.name, label.name, x.name,
+   Composition_3, Composition,
+   clusters.lists, Composition.lists, clusters
+)
+rm(bartfit, Composition_2, Corr.Result.pearson.pairs, data,
+   g, Import.list, m2, model2, mse.df,
+                  Multi.Regre.Result.list, per.var.df, rf.nhanes,
+                  Test.list, x, xtest, xtrain,
+   cell, cols, cols.names, formula2, n, ntest, numeric.variables,
+   ord, RP, testid, trainid, uu, y, y.pred, yhat.bart, ytest, ytrain
+   )
 gc()
 sessionInfo()
 

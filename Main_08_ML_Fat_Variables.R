@@ -19,8 +19,15 @@ sample.meta <- readRDS(paste0(Disk, Project.folder, "/", Rds.folder, "/", Sample
   tibble::rownames_to_column(var = "rowname")
 sample.meta <- sample.meta[ duplicated(sample.meta[["Dataset"]])==F,] 
 sample.meta <- sample.meta[ duplicated(sample.meta[["sample_id"]])==F,] 
-sample.meta <- sample.meta %>% 
-  dplyr::filter((!!sym(Select_Group)) == T)
+if (exists("Select_Group.names")) {
+  sample.meta <- sample.meta %>% 
+    dplyr::filter(
+      !!sym(Select_Group) %in% Select_Group.names  
+    )  
+} else {
+  sample.meta <- sample.meta %>% 
+    dplyr::filter((!!sym(Select_Group)) == T)
+}
 sample.meta <- sample.meta[,colSums(is.na(sample.meta))<nrow(sample.meta)] # Remove columns from dataframe where ALL values are NA
 colnames(sample.meta)
 sample.meta[["Dataset"]]
@@ -537,13 +544,18 @@ Import.list <- lapply(Import.list, function(x){
 
 Import.result <- bind_rows(Import.list, .id = "Basic.variables") %>%
   dplyr::filter(!(rowname == "(Intercept)") )
+if (exists("analysis.group")) {
+  file.name = paste0(dir0,  analysis.group , "_Basic.variables", "_", "Clinical.ML.RData")
+} else {
+file.name = paste0(dir0,  Select_Group , "_Basic.variables", "_", "Clinical.ML.RData")
+}
 save(mse.df,  Import.list , Test.list, all.df, 
      per.var.df, 
      Rsquare.df,
      data.list,
      Test.id.list , 
      Train.id.list, Import.result ,
-     file = paste0(dir0,  Select_Group , "_Basic.variables", "_", "Clinical.ML.RData")
+     file = file.name
 )
 
 rm(mse.df,  Import.list , Test.list, all.df, 
