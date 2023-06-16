@@ -6,6 +6,7 @@
 # For better reproducibility, please download quality-filtered Rds objects and work on downstream analyses. 
 # <br>
 #   change "D:/" to "/media/jianie/Extreme SSD1/" # if in LUNIX computer
+setwd("/media/jianie/DATA")
 
 ### Load libraries -------------------------------------------------------------------------------------------------------------
 #rm(list = ls(all.names = TRUE)) #will clear all objects includes hidden objects.
@@ -407,11 +408,7 @@ for (markers.file in markers.files) {
       # nn = names(gostres_plot_list_combine[[ll]])[7];nn
       if (nrow(gostres_plot_list_combine[[ll]][[nn]]) > 0 ) {
         pathways <- gostres_plot_list_combine[[ll]][[nn]]
-      }
-    }  
-    for (nn in names(Result.Path.list.final[[ll]]) ) {
-      # nn = names(gostres_plot_list_combine[[ll]])[7];nn
-      if (nrow(Result.Path.list.final[[ll]][[nn]]) > 0 ) {
+  
         ## plot ggboxplot for all gost results -----------
         if( exists("p1") ){ rm(p1) }
         df <- data.frame()
@@ -515,7 +512,7 @@ for (markers.file in markers.files) {
                   panel.spacing.y = unit(0, "lines")) + scale_x_discrete(position = "bottom") ;p1
           png(filename = paste0(dir2.1,  
                                 sub("_[^_]+$", "", stringr::str_split(markers.file, "/")[[1]][3]), "_",
-                                paste0(ll, ".", nn), "_l2_gprofiler.ggbarplot.png"),  
+                                paste0(ll, ".", make.names(nn)), "_l2_gprofiler.ggbarplot.png"),  
               width = 13, 
               height= nrow(df) * 0.23 + 2.5 , res = 300, units = "in")
           print(p1)
@@ -561,12 +558,17 @@ for (markers.file in markers.files) {
               pathview(gene.data = as.matrix(dd) , pathway.id = as.character(df_list[[vv]][dd.row, "hsa.name"]), # stringr::str_split(rownames(df[i, ]), " ")[[1]][1],
                        out.suffix = paste0(sub("_[^_]+$", "", stringr::str_split(markers.file, "/")[[1]][3]), "_",
                                            paste0(ll, ".", nn, ".", vv),  "_l2_gost.Graphviz" ),   kegg.native = F, same.layer = F, multi.state = T) # Graphviz engine, pdf, page 1 is the main graph, page 2 is the legend
-              setwd("~/")
+              
+              setwd("/media/jianie/DATA")
             }
           }
         }
-        
+      }
+    }  
         ## plot ggboxplot for gage results -----------
+    for (nn in names(Result.Path.list.final[[ll]]) ) {
+      # nn = names(Result.Path.list.final[[ll]])[7];nn
+      if (nrow(Result.Path.list.final[[ll]][[nn]]) > 0 ) {
         if( exists("p1") ){ rm(p1) }
         pathways <- Result.Path.list.final[[ll]][[nn]]
         df <- data.frame()

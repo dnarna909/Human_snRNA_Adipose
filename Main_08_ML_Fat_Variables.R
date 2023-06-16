@@ -25,8 +25,13 @@ if (exists("Select_Group.names")) {
       !!sym(Select_Group) %in% Select_Group.names  
     )  
 } else {
-  sample.meta <- sample.meta %>% 
-    dplyr::filter((!!sym(Select_Group)) == T)
+  sample.meta.list <- list()
+  for (ss in Select_Group) {
+  sample.meta.list[[ss]] <- sample.meta %>% 
+    dplyr::filter((!!sym(ss)) == T)
+  }
+  sample.meta <- do.call(rbind, sample.meta.list) %>% 
+    dplyr::filter(!(duplicated(Dataset)))
 }
 sample.meta <- sample.meta[,colSums(is.na(sample.meta))<nrow(sample.meta)] # Remove columns from dataframe where ALL values are NA
 colnames(sample.meta)
@@ -64,7 +69,7 @@ numeric.cols1 = intersect(setdiff(c(colnames(var.df), colnames(var.df2)), "Datas
 # numeric.cols = colnames(all.df.n)[colnames(all.df) %in% setdiff(colnames(var.df), "Dataset")]
 numeric.cols1
 
-if (Select_Group %in% c("Compare_Group1", "Compare_Group3", "Select_Group")){
+if ( unique(Select_Group %in% c("Compare_Group1", "Compare_Group3", "Select_Group", "BA_Group"))){
   numeric.cols2 =  c( 
     "Blood.Urea.Nitrogen..BUN.", "Creatinine", "Sodium", "Potassium", 
     "Calcium", "Protein..Total", "Albumin", "Alkaline.Phosphatase", "AST", "ALT",  
@@ -82,7 +87,7 @@ if (Select_Group %in% c("Compare_Group1", "Compare_Group3", "Select_Group")){
   )
 }
 
-if (Select_Group %in% c("Compare_Group2")){
+if (unique(Select_Group %in% c("Compare_Group2"))){
   numeric.cols2 =  c( 
     "Blood.Urea.Nitrogen..BUN.", "Creatinine", "Sodium", "Potassium", 
     "Calcium", "Protein..Total", "Albumin", "Alkaline.Phosphatase", "AST", "ALT", 
@@ -145,6 +150,9 @@ for (uu in  numeric.cols1  ){
                                                 levels = unique(data[[colnames(name.data)[cc]]]))
     }
   }
+  n <- nrow(data)
+  name.data <- data[, sapply(data, class) %in% c('factor', 'character')]
+  
   random.sample <- function(x) {
     success <- FALSE
     while (!success) {
@@ -547,7 +555,7 @@ Import.result <- bind_rows(Import.list, .id = "Basic.variables") %>%
 if (exists("analysis.group")) {
   file.name = paste0(dir0,  analysis.group , "_Basic.variables", "_", "Clinical.ML.RData")
 } else {
-file.name = paste0(dir0,  Select_Group , "_Basic.variables", "_", "Clinical.ML.RData")
+file.name = paste0(dir0,  paste(Select_Group, collapse = "_") , "_Basic.variables", "_", "Clinical.ML.RData")
 }
 save(mse.df,  Import.list , Test.list, all.df, 
      per.var.df, 
@@ -570,6 +578,7 @@ rm(all.df.n, bartfit, data, lasso, model, n_occur, name.data,
    n, numeric.cols, numeric.cols.c, numeric.cols1, numeric.cols2,
    numeric.variables, ord, predictions, testid, trainid,
    uu, y, y.pred, yhat.bart, ytest, ytrain, random.sample,
-   check.data, Annotation.file.name , file.name, Type.file.name )
+   check.data, Annotation.file.name , file.name, Type.file.name,
+   sample.meta.list)
 gc()
 sessionInfo()

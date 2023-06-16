@@ -902,27 +902,43 @@ Select_Group = "Select_Group";
 Sample.meta.file = "SAT_Sample.meta.data.Rds";
 file.variables = "SAT_Label_2000_Senescence_ModuleScoreAve.df.Rds";
 file.variables2 = "SAT_Label_2000_Subtype_Composition.combine.Rds";
-# charact.variables = c("Gender", "Ethnicity", "Group", "Pre_Post")
+charac.variables = c("Gender", "Ethnicity", "Group", "Pre_Post")
 rmarkdown::render(input= paste0(Disk, Project.folder, "/", codes.folder, "/", "Main_08_ML_Fat_Variables.R"), 
                   output_format= "html_document",
                   output_file = file.path(paste0(Disk, Project.folder, "/", html.folder), 
                                           paste0('Main_08_ML_Fat_Variables_', 
                                                  Select_Group, 
                                                  '.html')))
-rm(export.folder, Select_Group, Sample.meta.file, file.variables, file.variables2 )
+rm(export.folder, Select_Group, Sample.meta.file, file.variables, file.variables2, charac.variables )
 
 export.folder = "ML.Variables";
 Select_Group = "Compare_Group2"; 
 Sample.meta.file = "SAT_Sample.meta.data.Rds";
 file.variables = "SAT_Label_2000_Senescence_ModuleScoreAve.df.Rds";
 file.variables2 = "SAT_Label_2000_Subtype_Composition.combine.Rds";
+charac.variables = c("Gender", "Ethnicity", "Group", "Pre_Post")
 rmarkdown::render(input= paste0(Disk, Project.folder, "/", codes.folder, "/", "Main_08_ML_Fat_Variables.R"), 
                   output_format= "html_document",
                   output_file = file.path(paste0(Disk, Project.folder, "/", html.folder), 
                                           paste0('Main_08_ML_Fat_Variables_', 
                                                  Select_Group, 
                                                  '.html')))
-rm(export.folder, Select_Group, Sample.meta.file, file.variables, file.variables2)
+rm(export.folder, Select_Group, Sample.meta.file, file.variables, file.variables2, charac.variables)
+
+
+export.folder = "ML.Variables";
+Select_Group = c("Compare_Group1", "Compare_Group3"); 
+Sample.meta.file = "SAT_Sample.meta.data.Rds";
+file.variables = "SAT_Label_2000_Senescence_ModuleScoreAve.df.Rds";
+file.variables2 = "SAT_Label_2000_Subtype_Composition.combine.Rds";
+charac.variables = c("Gender", "Ethnicity", "Group", "Pre_Post")
+rmarkdown::render(input= paste0(Disk, Project.folder, "/", codes.folder, "/", "Main_08_ML_Fat_Variables.R"), 
+                  output_format= "html_document",
+                  output_file = file.path(paste0(Disk, Project.folder, "/", html.folder), 
+                                          paste0('Main_08_ML_Fat_Variables_', 
+                                                 paste(Select_Group, collapse = "_"),  
+                                                 '.html')))
+rm(export.folder, Select_Group, Sample.meta.file, file.variables, file.variables2, charac.variables )
 
 
 export.folder = "ML.Variables";
@@ -931,14 +947,34 @@ analysis.group = "HealthyGroups"
 Sample.meta.file = "SAT_Sample.meta.data.Rds";
 file.variables = "SAT_Label_2000_Senescence_ModuleScoreAve.df.Rds";
 file.variables2 = "SAT_Label_2000_Subtype_Composition.combine.Rds";
-# charact.variables = c("Gender", "Ethnicity", "Group", "Pre_Post")
+charac.variables = c("Gender", "Ethnicity", "Group", "Pre_Post")
 rmarkdown::render(input= paste0(Disk, Project.folder, "/", codes.folder, "/", "Main_08_ML_Fat_Variables.R"), 
                   output_format= "html_document",
                   output_file = file.path(paste0(Disk, Project.folder, "/", html.folder), 
                                           paste0('Main_08_ML_Fat_Variables_', 
                                                  analysis.group, 
                                                  '.html')))
-rm(export.folder, Select_Group, Select_Group.names, Sample.meta.file, file.variables, file.variables2 )
+rm(export.folder, Select_Group, Select_Group.names, Sample.meta.file, file.variables, file.variables2, charac.variables )
+
+
+
+export.folder = "ML.Variables";
+Select_Group = "BA_Group"; Select_Group.names =  c("Middle_Lean", "Middle_Overweight", "Middle_Obese", 
+                                                   "Older_PreD_Lean", "Older_PreD_Overweight", 
+                                                   "Older_Lean", "Older_Overweight", "Older_PreD_Obese") ; 
+analysis.group = "NoDiabetesGroups"
+Sample.meta.file = "SAT_Sample.meta.data.Rds";
+file.variables = "SAT_Label_2000_Senescence_ModuleScoreAve.df.Rds";
+file.variables2 = "SAT_Label_2000_Subtype_Composition.combine.Rds";
+charac.variables = c("Gender", "Ethnicity", "Group", "Pre_Post")
+rmarkdown::render(input= paste0(Disk, Project.folder, "/", codes.folder, "/", "Main_08_ML_Fat_Variables.R"), 
+                  output_format= "html_document",
+                  output_file = file.path(paste0(Disk, Project.folder, "/", html.folder), 
+                                          paste0('Main_08_ML_Fat_Variables_', 
+                                                 analysis.group, 
+                                                 '.html')))
+rm(export.folder, Select_Group, Select_Group.names, Sample.meta.file, file.variables, file.variables2, charac.variables , analysis.group)
+
 
 
 ## ML in all variables Random Forest -----------
@@ -1965,6 +2001,7 @@ rm(seurat.files , file.type, sample.file.type, markers.files, Select_Group, grou
 
 ## 5. Markers to GProfiler Pathway Analysis and Plotting  ---------
 ### Select_Group
+setwd("/media/jianie/DATA")
 markers.files = c(
   "FindMarkers_SAT_Label_2000/Annotation.Level2.Markers/SAT_Label_2000_Annotation.Select_Group_Combined.Mean.Rds"
   ,"FindMarkers_SAT_Label_2000/Subtype.Level2.Markers/SAT_Label_2000_Endothelial_Subtype.Select_Group_Combined.Mean.Rds"
